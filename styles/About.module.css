@@ -1,0 +1,7 @@
+/* cannot use element selectors */
+/* can only use class selectors camelCase */
+
+.extraRed {
+    color:red
+}
+
