@@ -34,21 +34,18 @@ export default function Contact({}: Props) {
           </h4>
 
           <div>
-            <div className='flex items-center space-x-5 justify-center'>
+            <div className='flex items-center mb-4 space-x-5 justify-center'>
               <MapPinIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
               <p className='text-2xl'>Seattle <span className='text-green-400'>Washington</span></p>
             </div>
-            <div className='flex items-center space-x-5 mb-4 justify-center'>
+            <div className='flex items-center space-x-5 mb-6 justify-center'>
               <EnvelopeIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
               <p className='text-2xl'>Sjmanion123@gmail.com</p>
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
-              <div className='flex space-x-2'>
-                <input {...register('name')} className='contactInput' placeholder='Name' type="text" />
-                <input {...register('email')} className='contactInput' placeholder='Email' type="email" />
-              </div>
-
+              <input {...register('name')} className='contactInput' placeholder='Name' type="text" />
+              <input {...register('email')} className='contactInput' placeholder='Email' type="email" />
               <input {...register('subject')} className='contactInput' placeholder='Subject' type="text" />
               <textarea {...register('message')} className='contactInput' placeholder='Message' />
               <button type='submit' className='bg-yellow-400 py-5 px-10 rounded-md text-black font-bold text-lg'>Submit</button>

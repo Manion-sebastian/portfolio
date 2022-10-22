@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 import Header from '../components/header'
 import Hero from '../components/hero'
@@ -54,6 +55,16 @@ const Home: NextPage = () => {
       <section id='contact' className='snap-center'>
         <Contact />
       </section>
+
+        <footer className='sticky bottom-5 flex justify-center w-full'>
+              <Link href="#hero">
+                <div className='flex w-fit items-center just ify-center'>
+                  <Image src={'https://i.imgur.com/DkIiGlB.png'} alt='home' height={45} width={45} className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' />
+                </div>
+              </Link>
+        </footer>
+  
+
       
     </div>
   )
