@@ -33,7 +33,7 @@ export default function Contact({}: Props) {
 
               <input className='contactInput' type="text" />
               <textarea className='contactInput' />
-              <button type='submit'>Submit</button>
+              <button type='submit' className='bg-yellow-400 py-5 px-10 rounded-md text-black font-bold text-lg'>Submit</button>
 
             </form>
 

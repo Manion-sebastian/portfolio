@@ -10,6 +10,6 @@
   }
 
   .contactInput {
-    @apply bg-slate-800 rounded-sm px-6 py-4 border-yellow-200 placeholder-white transition-all focus:border-white/40 focus:text-yellow-300 hover:border-yellow-100 border-b-4 font-bold
+    @apply bg-slate-800 rounded-sm px-6 py-4 border-yellow-400 placeholder-white transition-all focus:border-white/40 focus:text-yellow-300 hover:border-yellow-100 border-b-4 font-bold
   }
 }
