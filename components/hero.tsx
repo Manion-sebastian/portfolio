@@ -21,7 +21,7 @@ export default function Hero({}: Props) {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles />
-        <Image src='https://media-exp1.licdn.com/dms/image/C5603AQFKVY3ljseKuQ/profile-displayphoto-shrink_800_800/0/1660083494530?e=1671667200&v=beta&t=v-Znxg-d_QXgopWPvjNme3ivOvzE_3ezREUD5R0F0j0' alt='sebastian manion' width={150} height={150} className='rounded-full relative mx-auto' />
+        {/* <Image src='https://i.imgur.com/jsLndwF.png' alt='sebastian manion' width={250} height={250} className='rounded-full relative mx-auto' />` */}
         <div className='z-20'>
             <h2 className='text-sm uppercase pb-2 tracking-[14px] text-yellow-400'>Software Engineer</h2>
             <h1 className='text-5xl lg:text-6xl font-bold px-10'>
