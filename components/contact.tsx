@@ -1,5 +1,5 @@
 import React from 'react'
-// import 
+import { MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 
 type Props = {}
 
@@ -16,8 +16,13 @@ export default function Contact({}: Props) {
           </h4>
 
           <div>
-            <div className='flex items-center space-x-5'>
-             
+            <div className='flex items-center space-x-5 justify-center'>
+              <MapPinIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
+              <p>Seattle <span className='text-green-400'>Washington</span></p>
+            </div>
+            <div className=''>
+              <EnvelopeIcon className='text-yellow-400 h-7 w-7 animate-spin' />
+              <p>sjmanion123@gmail.com</p>
             </div>
             
             <form className='flex flex-col space-y-2 w-fit mx-auto'>
