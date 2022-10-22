@@ -15,15 +15,15 @@ export default function Skill({leftDirection}: Props) {
             viewport={{once:true}}
             src=''
             alt='skill'
-            className='rounded-full border border-yellow-400 object-cover w-24 h-24 md:w-28 md:h-28  xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'        
+            className='rounded-full border border-yellow-400 object-cover w-24 h-24 md:w-28 md:h-28  xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in'        
         />
 
-        <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-yellow-50 h-24 w-24
+        {/* <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-yellow-50 h-24 w-24
         md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0'>
             <div className='fkex items-center justify-center h-full'>
                 <p className='text-3xl text-yellow-500 font-bold opacity-100'>100%</p>
             </div>
-        </div>
+        </div> */}
 
 
         

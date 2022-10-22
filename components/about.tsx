@@ -35,15 +35,17 @@ export default function About({}: Props) {
           }}
           viewport={{once:true}}
             src='https://i.imgur.com/z5ffaRx.jpg'
-            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]'
+            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] z-30'
         />
 
-        <div className='space-y-10 px-0 md:px-10'>
+        <div className='space-y-10 px-0 md:px-10 z-20'>
           <h4 className='text-4xl font-semibold'>Here is a{" "}<span className='underline decoration-yellow-400'>Little</span>{" "} background</h4>
           <p className='text-sm'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam laboriosam velit sit, nisi officiis itaque, inventore, odit reiciendis impedit perspiciatis cum ratione possimus. Dolore id cumque delectus obcaecati qui dignissimos?
           </p>
+
         </div>
+          <div className='w-full absolute top-[30%] bg-yellow-500/30 left-0 h-[500px] skew-y-12 z-10'></div>
     </motion.div>
   )
 }

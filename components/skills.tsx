@@ -11,11 +11,9 @@ export default function Skills({}: Props) {
             Skills
         </h3>
 
-        <h3 className='absolute top-36 uppercase tracking-[3px] text-yellow-500 text-sm'>Hover over a skill for current proficiency</h3>
+        <h3 className='absolute top-36 uppercase tracking-[3px] text-yellow-500 text-sm'>My favorite tools</h3>
 
-        <div className='grid grid-cols-4 gap-5'>
-          <Skill />
-          <Skill />
+        <div className='grid grid-cols-2 gap-5'>
           <Skill />
           <Skill />
           <Skill />
