@@ -26,13 +26,13 @@ export default function Contact({}: Props) {
             </div>
             
             <form className='flex flex-col space-y-2 w-fit mx-auto'>
-              <div className='fkex space-x-2'>
-                <input type="text" />
-                <input type="text" />
+              <div className='flex space-x-2'>
+                <input className='contactInput'  type="text" />
+                <input className='contactInput' type="text" />
               </div>
 
-              <input type="text" />
-              <textarea />
+              <input className='contactInput' type="text" />
+              <textarea className='contactInput' />
               <button type='submit'>Submit</button>
 
             </form>
