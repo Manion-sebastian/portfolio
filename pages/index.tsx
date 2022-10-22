@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 
 import Header from '../components/header'
 import Hero from '../components/hero'
+import About from '../components/about'
 
 const Home: NextPage = () => {
   return (
@@ -19,11 +20,14 @@ const Home: NextPage = () => {
       <Header />
 
       {/* hero */}
-      <section  id='hero' className='snap-center'>
+      <section  id='hero' className='snap-start'>
         <Hero />
       </section>
 
       {/* about */}
+      <section id='about' className='snap-center'>
+        <About />
+      </section>
 
       {/* experience */}
 
