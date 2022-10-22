@@ -1,13 +1,21 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import Skill from './skill'
 
 type Props = {}
 
 export default function Skills({}: Props) {
   return (
-    <div className='h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
+    <motion.div className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'>
         <h3 className='absolute top-24 uppercase tracking-[20px] text-yellow-400 text-2xl'>
-            standin
+            Skills
         </h3>
-    </div>
+
+        <h3 className='absolute top-36 uppercase tracking-[3px] text-yellow-500 text-sm'>Hover over a skill for current proficiency</h3>
+
+        <div className='grid grid-cols-4 gap-5'>
+          <Skill />
+        </div>
+    </motion.div>
   )
 }
