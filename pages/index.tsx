@@ -6,6 +6,10 @@ import styles from '../styles/Home.module.css'
 import Header from '../components/header'
 import Hero from '../components/hero'
 import About from '../components/about'
+import WorkExperience from '../components/workExperience'
+import Skills from '../components/skills'
+import Projects from '../components/projects'
+import Contact from '../components/contact'
 
 const Home: NextPage = () => {
   return (
@@ -30,13 +34,26 @@ const Home: NextPage = () => {
       </section>
 
       {/* experience */}
+      <section id='experience' className='snap-center'>
+        <WorkExperience />
+      </section>
 
       {/* skills */}
+      <section id='skills' className='snap-center'>
+        <Skills />
+      </section>
 
       {/* projects */}
 
+      <section id='projects' className='snap-center'>
+        <Projects />
+      </section>
+
       {/* contact me */}
 
+      <section id='contact' className='snap-center'>
+        <Contact />
+      </section>
       
     </div>
   )
