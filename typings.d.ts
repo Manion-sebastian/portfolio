@@ -37,6 +37,18 @@ export interface Project extends SanityBody {
 
 }
 
+export interface Experience extends SanityBody {
+    _type: 'experience'
+    company: string
+    companyImage: Image
+    dateStarted: date
+    dateEnded: date 
+    isCurrentlyWorkingHere: boolean
+    jobTitle: string
+    points: string[]
+    technologies: Technology[]
+}
+
 export interface PageInfo extends SanityBody {
     _type: 'pageInfo'
     address: string
