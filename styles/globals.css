@@ -14,6 +14,6 @@
   }
 
   .scrollColor {
-    @apply scrollbar scrollbar-track-slate-900/20 scrollbar-thumb-yellow-400
+    @apply scrollbar scrollbar-track-slate-900/20 scrollbar-thumb-yellow-400 scrollbar-thin
   }
 }

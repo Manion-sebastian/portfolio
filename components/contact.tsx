@@ -23,12 +23,12 @@ export default function Contact({}: Props) {
   }
 
   return (
-    <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
-        <h3 className='absolute top-24 uppercase tracking-[20px] text-yellow-400 text-2xl'>
+    <div className='h-screen w-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
+        <h3 className='absolute top-24 uppercase tracking-[18px] text-yellow-400  text-xl'>
             Get in touch
         </h3>
 
-        <div className='flex flex-col space-y-10'>
+        <div className='flex w-screen p-3 flex-col space-y-10'>
           <h4 className='text-4xl font-semibold text-center'>
             Always up to chat,{" "}<span className='decoration-yellow-400 underline'>Contact Me</span>
           </h4>
