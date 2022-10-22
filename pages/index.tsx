@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
 import Header from '../components/header'
@@ -11,8 +10,22 @@ import WorkExperience from '../components/workExperience'
 import Skills from '../components/skills'
 import Projects from '../components/projects'
 import Contact from '../components/contact'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchExperiences } from '../utils/fetchExperience'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSocials } from '../utils/fetchSocials'
 
-const Home: NextPage = () => {
+type Props = {
+    pageInfo: PageInfo
+    experiences: Experience
+    projects: Project
+    skills: Skill
+    socials: Social
+}
+
+const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
   return (
     <div className={'bg-slate-900 text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollColor'}>
       <Head>
@@ -62,12 +75,27 @@ const Home: NextPage = () => {
                   <Image src={'https://i.imgur.com/DkIiGlB.png'} alt='home' height={45} width={45} className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' />
                 </div>
               </Link>
-        </footer>
-  
-
-      
+        </footer>      
     </div>
   )
 }
 
 export default Home
+
+const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo()
+  const experiences: Experience[] = await fetchExperiences()
+  const skills: Skill[] = await fetchSkills()
+  const projects: Project[] = await fetchProjects()
+  const socials: Social[] = await fetchSocials()
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    }
+  }
+}
