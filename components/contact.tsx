@@ -18,11 +18,11 @@ export default function Contact({}: Props) {
           <div>
             <div className='flex items-center space-x-5 justify-center'>
               <MapPinIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
-              <p>Seattle <span className='text-green-400'>Washington</span></p>
+              <p className='text-2xl'>Seattle <span className='text-green-400'>Washington</span></p>
             </div>
-            <div className=''>
-              <EnvelopeIcon className='text-yellow-400 h-7 w-7 animate-spin' />
-              <p>sjmanion123@gmail.com</p>
+            <div className='flex items-center space-x-5 justify-center'>
+              <EnvelopeIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
+              <p className='text-2xl'>Sjmanion123@gmail.com</p>
             </div>
             
             <form className='flex flex-col space-y-2 w-fit mx-auto'>
