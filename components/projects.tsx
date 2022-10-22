@@ -14,7 +14,7 @@ export default function Projects({}: Props) {
             Projects
       </h3>
 
-      <div className='relative w-full flex overflow-x-scroll   overflow-y-hidden snap-x snap-mandatory z-30'>
+      <div className='relative w-full flex overflow-x-scroll   overflow-y-hidden snap-x snap-mandatory z-30 scrollColor'>
         {projects.map((project, i) => (
           <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-46' key={`projectkey${i}`}>
               <motion.div 

@@ -25,7 +25,7 @@ export default function ExperienceCard({}: Props) {
                 <img className='h-10 w-10 rounded-full' src="" alt="" />
             </div>
             <p className='py-5 uppercase text-white'>Started... - Ended...</p>
-            <ul className='list-disc space-y-4 ml-5 text-lg overflow-y-scroll h-32'>
+            <ul className='list-disc scrollColor space-y-4 ml-5 text-lg overflow-y-scroll h-32'>
                 <li>summary points</li>
                 <li>summary points</li>
                 <li>summary points</li>
