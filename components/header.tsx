@@ -24,11 +24,11 @@ export default function Header({}: Props) {
          className='flex flex-row items-center'>
             {/* social links */}
             <SocialIcon url='https://www.linkedin.com/in/sebastianmanion/'
-            fgColor='grey'
+            fgColor='white'
             bgColor='transparent'
              />
             <SocialIcon url='https://github.com/Manion-sebastian' 
-            fgColor='grey'
+            fgColor='white'
             bgColor='transparent'
             />
         </motion.div>
@@ -52,10 +52,10 @@ export default function Header({}: Props) {
             <SocialIcon
                 className='cursor-pointer'
                 network='email'
-                fgColor='grey'
+                fgColor='white'
                 bgColor='transparent'
              />
-            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>get in touch</p>
+            <p className='uppercase hidden md:inline-flex text-sm text-white'>Contact Me</p>
         </motion.div>
     </header>
   )
