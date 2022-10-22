@@ -24,6 +24,13 @@ export default function About({}: Props) {
             src='https://i.imgur.com/z5ffaRx.jpg'
             className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]'
         />
+
+        <div className='space-y-10 px-0 md:px-10'>
+          <h4 className='text-4xl font-semibold'>Here os a{" "}<span className='underline decoration-yellow-400'>Little</span>{" "} background</h4>
+          <p className='text-sm'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam laboriosam velit sit, nisi officiis itaque, inventore, odit reiciendis impedit perspiciatis cum ratione possimus. Dolore id cumque delectus obcaecati qui dignissimos?
+          </p>
+        </div>
     </div>
   )
 }
