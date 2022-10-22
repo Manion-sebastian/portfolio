@@ -18,7 +18,9 @@ export default function Contact({}: Props) {
     handleSubmit
   } = useForm<Inputs>()
 
-  const onSubmit: SubmitHandler<Inputs> = (FormData) => console.log(FormData)
+  const onSubmit: SubmitHandler<Inputs> = (FormData) => {
+    window.location.href = `mailto:sjmanion123@gmail.com?subject=${FormData.subject}&body=Hi, my name is ${FormData.name}. ${FormData.message} (${FormData.email})`
+  }
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
