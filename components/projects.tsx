@@ -60,13 +60,16 @@ export default function Projects({}: Props) {
             </motion.div>
 
               <div className='space-y-10 px-0 md:px-10 max-w-full'>
-                <h4 className='text-4xl font-semibold text-center'><span className='underline decoration-yellow-400'>{project.name}</span></h4>
+                <div className='flex justify-center items-baseline'>
+                <h4 className='text-4xl mr-5 font-semibold text-center'><span className='underline decoration-yellow-400'>{project.name}</span></h4>
+                <p><a href={`${project.live}`} rel='noreferrer' target='_blank' >live</a>{ " " }|{ " " }<a href={`${project.github}`} rel='noreferrer' target='_blank'>github</a></p>
 
-                <p className='text-lg  text-center md:text-left'>{project.desc}</p>
-                <div className='flex flex-row flex-shrink-0 justify-between'> 
-                  <p><a href={`${project.live}`} rel='noreferrer' target='_blank' >live</a>{ " " }|{ " " }<a href={`${project.github}`} rel='noreferrer' target='_blank'>github</a></p>
+                </div>
+
+                <p className='text-lg  text-center w-60 md:w-full md:text-left'>{project.desc}</p>
+                <div className=' md:flex-row md:flex-shrink-0 justify-around hidden lg:flex'> 
                   {project.tech.map((item, i) => (
-                    <div className='flex flex-col flex-shrink-0' key={`${item.name}-${i}`}>
+                    <div className='flex flex-col flex-shrink-0 ' key={`${item.name}-${i}`}>
                       <span className='mb-4 tracking-[2px]'>{item.name} </span>
                       <Image className='' src={item.logo} alt={item.name} width={80} height={80} />
                     </div>

@@ -35,7 +35,7 @@ export default function About({}: Props) {
           }}
           viewport={{once:true}}
             src='https://i.imgur.com/z5ffaRx.jpg'
-            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] z-30'
+            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] z-20'
         />
 
         <div className='space-y-10 px-0 md:px-10 z-20'>
