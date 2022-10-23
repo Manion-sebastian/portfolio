@@ -57,6 +57,7 @@ const Home = ({pageInfo,  projects, skills, socials}: Props) => {
       {/* skills */}
 
       <section id='skills' className='snap-center'>
+        {/* skills={skills} */}
         <Skills />
       </section>
 

@@ -49,15 +49,20 @@ export default function Projects({}: Props) {
         {projects.map((project, i) => (
           <div className=' flex-shrink-0 w-full snap-center flex flex-col space-y-5 items-center justify-center p-15 md:p-20 h-46' key={`projectkey${i}`}>
               <motion.div 
-                initial={{x:-200, opacity:0}}
+                initial={{y:200, opacity:0}}
                 transition={{duration:1.2}}
-                whileInView={{opacity:1, x:0}}
+                whileInView={{opacity:1, y:0}}
                 viewport={{once:true}}
                 
             
             >
               <Image className='drop-shadow-2xl' src={project.snapshot} width={250} height={125} alt='project' />
             </motion.div>
+            <motion.div
+              initial={{y:-200, opacity:0}}
+                transition={{duration:2.2}}
+                whileInView={{opacity:[0, 0,0, 0, 0.8, 0, 1], y:0}}
+                viewport={{once:true}}>
 
               <div className='space-y-10 px-0 md:px-10 max-w-full'>
                 <div className='flex justify-center items-baseline'>
@@ -76,6 +81,8 @@ export default function Projects({}: Props) {
                   ))}
                 </div>
               </div>
+            </motion.div>
+
 
             </div>
         ))}

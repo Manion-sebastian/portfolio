@@ -1,8 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './skill'
+// import { Skill } from '../typings'
 
-type Props = {}
+
+type Props = {
+  // skills: Skill[]
+}
 
 export default function Skills({}: Props) {
   return (
