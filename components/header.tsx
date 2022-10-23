@@ -26,7 +26,7 @@ export default function Header({ socials }: Props) {
                 duration:1.5,
             }}
          className='flex flex-row items-center'>
-            {/* social links */}
+            {/* social links
             {socials.map((social) => (
                 <SocialIcon 
                 key={social._id}
@@ -35,7 +35,7 @@ export default function Header({ socials }: Props) {
                 bgColor='transparent'
                  />
 
-            ))}
+            ))} */}
             <SocialIcon url='https://github.com/Manion-sebastian' 
             fgColor='white'
             bgColor='transparent'
