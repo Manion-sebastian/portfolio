@@ -15,7 +15,13 @@ export const config = {
 }
 
 
+console.log(config) // output works. 
+
+
+
 
 export const sanityClient = createClient(config)
+
+console.log('sanityClient', sanityClient)
 
 export const urlFor = (source: any) => createImageUrlBuilder(config).image(source)

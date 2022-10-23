@@ -27,7 +27,7 @@ export default function Projects({}: Props) {
     },
     {
       name: 'pLan',
-      snapshot: 'https://i.imgur.com/xcDFebC.png',
+      snapshot: 'https://i.imgur.com/TLr8EPb.png',
       desc:
         'Plan making application where you can create daily notes plans, reminders and more. Allows upload of photos for the plan as well as the user. \n PEN application with the integration of Cloudinary for photo processing and storage.'
       ,
@@ -56,7 +56,7 @@ export default function Projects({}: Props) {
                 
             
             >
-              <Image src={project.snapshot} width={250} height={125} alt='project' />
+              <Image className='drop-shadow-2xl' src={project.snapshot} width={250} height={125} alt='project' />
             </motion.div>
 
               <div className='space-y-10 px-0 md:px-10 max-w-full'>
@@ -67,11 +67,11 @@ export default function Projects({}: Props) {
                 </div>
 
                 <p className='text-lg  text-center w-60 md:w-full md:text-left'>{project.desc}</p>
-                <div className=' md:flex-row md:flex-shrink-0 justify-around hidden lg:flex'> 
+                <div className=' md:flex-row md:flex-shrink-0 justify-evenly hidden lg:flex'> 
                   {project.tech.map((item, i) => (
-                    <div className='flex flex-col flex-shrink-0 ' key={`${item.name}-${i}`}>
-                      <span className='mb-4 tracking-[2px]'>{item.name} </span>
-                      <Image className='' src={item.logo} alt={item.name} width={80} height={80} />
+                    <div className='flex text-center flex-col flex-shrink-0 bg-white/80 justify-center items-center p-4 w-1/4 m-4 rounded-lg ' key={`${item.name}-${i}`}>
+                      <span className='mb-4 tracking-[2px] drop-shadow-2xl text-black font-bold '>{item.name} </span>
+                      <Image className='drop-shadow-2xl' src={item.logo} alt={item.name} layout='fixed' width={80} height={80} />
                     </div>
                   ))}
                 </div>
