@@ -2,7 +2,6 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-// import { GetStaticProps } from 'next'
 
 import Header from '../components/header'
 import Hero from '../components/hero'
@@ -21,7 +20,7 @@ import { fetchSocials } from '../utils/fetchSocials'
 
 type Props = {
     pageInfo: PageInfo
-    experiences: Experience[]
+    // experiences: Experience[]
     projects: Project[]
     skills: Skill[]
     socials: Social[]
@@ -30,9 +29,9 @@ type Props = {
 
 
 // const socials: Social[] = fetchSocials()
+// experiences,
 
-
-const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
+const Home = ({pageInfo,  projects, skills, socials}: Props) => {
   // console.log('socials',socials)
   // testapi()
   return (
@@ -44,17 +43,16 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       </Head>
 
       {/* header */}
-      {/* socials={socials} */}
       <Header socials={socials} />
 
       {/* hero */}
       <section  id='hero' className='snap-start'>
-        <Hero />
+        <Hero pageInfo={pageInfo}/>
       </section>
 
       {/* about */}
       <section id='about' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfo}/>
       </section>
       {/* skills */}
 
@@ -94,9 +92,9 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
 
 export default Home
 
-const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperiences()
+  // const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
   const projects: Project[] = await fetchProjects()
   const socials = await fetchSocials()
@@ -105,12 +103,11 @@ const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      experiences,
+      // experiences,
       skills,
       projects,
       socials,
     },
-
     revalidate: 300
   }
 }

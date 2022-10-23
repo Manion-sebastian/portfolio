@@ -4,13 +4,17 @@ import { Cursor, useTypewriter } from
 import BackgroundCircles from './backgroundCircles'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo
+}
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
         words: [
-            'Hi, my name is Sebastian', 
+            `Hi, my name is ${pageInfo?.name || 'Sebastian Manion'}`, 
             'Rain and Puzzle Lover',
             'Cat Dad'
         ],
@@ -20,10 +24,10 @@ export default function Hero({}: Props) {
 
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-        <BackgroundCircles />
-        {/* <Image src='https://i.imgur.com/jsLndwF.png' alt='sebastian manion' width={250} height={250} className='rounded-full relative mx-auto' />` */}
+        {/* <BackgroundCircles /> */}
+        <Image src={urlFor(pageInfo?.heroImage).url()} alt={pageInfo?.name || 'Sebastian Manion'} width={300} height={300} className=' relative mx-auto' />
         <div className='z-20'>
-            <h2 className='text-sm uppercase pb-2 tracking-[14px] text-yellow-400'>Software Engineer</h2>
+            <h2 className='text-sm uppercase pb-2 tracking-[14px] text-yellow-400'>{pageInfo?.role || 'Software Engineer'}</h2>
             <h1 className='text-5xl lg:text-6xl font-bold px-10'>
                 <span className='mr-3'>{text}</span>
                 <Cursor cursorColor='gold' />
