@@ -10,22 +10,23 @@ import WorkExperience from '../components/workExperience'
 import Skills from '../components/skills'
 import Projects from '../components/projects'
 import Contact from '../components/contact'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
-import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchExperiences } from '../utils/fetchExperience'
-import { fetchSkills } from '../utils/fetchSkills'
-import { fetchProjects } from '../utils/fetchProjects'
-import { fetchSocials } from '../utils/fetchSocials'
+
+// import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+// import { fetchPageInfo } from '../utils/fetchPageInfo'
+// import { fetchExperiences } from '../utils/fetchExperience'
+// import { fetchSkills } from '../utils/fetchSkills'
+// import { fetchProjects } from '../utils/fetchProjects'
+// import { fetchSocials } from '../utils/fetchSocials'
 
 type Props = {
-    pageInfo: PageInfo
-    experiences: Experience
-    projects: Project
-    skills: Skill
-    socials: Social
+    // pageInfo: PageInfo
+    // experiences: Experience
+    // projects: Project
+    // skills: Skill
+    // socials: Social
 }
-
-const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
+// {pageInfo, experiences, projects, skills, socials}
+const Home = ({}: Props) => {
   return (
     <div className={'bg-slate-900 text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollColor'}>
       <Head>
@@ -35,7 +36,8 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       </Head>
 
       {/* header */}
-      <Header socials={socials} />
+      {/* socials={socials} */}
+      <Header  />
 
       {/* hero */}
       <section  id='hero' className='snap-start'>
@@ -46,13 +48,8 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       <section id='about' className='snap-center'>
         <About />
       </section>
-
-      {/* experience */}
-      <section id='experience' className='snap-center'>
-        <WorkExperience />
-      </section>
-
       {/* skills */}
+
       <section id='skills' className='snap-center'>
         <Skills />
       </section>
@@ -62,6 +59,13 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       <section id='projects' className='snap-center'>
         <Projects />
       </section>
+      
+      {/* experience */}
+      <section id='experience' className='snap-center'>
+        <WorkExperience />
+      </section>
+
+
 
       {/* contact me */}
 
@@ -82,22 +86,23 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
 
 export default Home
 
-const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperiences()
-  const skills: Skill[] = await fetchSkills()
-  const projects: Project[] = await fetchProjects()
-  const socials: Social[] = await fetchSocials()
+// db issue
+// const getStaticProps: GetStaticProps<Props> = async () => {
+//   const pageInfo: PageInfo = await fetchPageInfo()
+//   const experiences: Experience[] = await fetchExperiences()
+//   const skills: Skill[] = await fetchSkills()
+//   const projects: Project[] = await fetchProjects()
+//   const socials: Social[] = await fetchSocials()
 
-  return {
-    props: {
-      pageInfo,
-      experiences,
-      skills,
-      projects,
-      socials,
-    },
+//   return {
+//     props: {
+//       pageInfo,
+//       experiences,
+//       skills,
+//       projects,
+//       socials,
+//     },
 
-    revalidate: 300
-  }
-}
+//     revalidate: 300
+//   }
+// }

@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import { Social } from '../typings'
 
 type Props = {
-    socials: Social[]
+    // socials: Social[]
 }
-
-export default function Header({ socials }: Props) {
+// { socials }
+export default function Header({}: Props) {
   return (
     <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'>
         <motion.div
@@ -28,14 +28,17 @@ export default function Header({ socials }: Props) {
          className='flex flex-row items-center'>
             {/* social links
             {socials.map((social) => (
-                <SocialIcon 
-                key={social._id}
-                url={social.url}
-                fgColor='white'
-                bgColor='transparent'
-                 />
-
+                key=
+                {social._id}
+                {social.url}
             ))} */}
+
+            <SocialIcon 
+            
+            url='https://www.linkedin.com/in/sebastianmanion/'
+            fgColor='white'
+            bgColor='transparent'
+             />
             <SocialIcon url='https://github.com/Manion-sebastian' 
             fgColor='white'
             bgColor='transparent'
