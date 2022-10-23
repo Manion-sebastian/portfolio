@@ -5,6 +5,7 @@ export const fetchSocials = async () => {
 
     const data = await res.json()
     const socials: Social[] = data.socials
+    console.log('fSoc socials data', socials)
 
     return socials
 }

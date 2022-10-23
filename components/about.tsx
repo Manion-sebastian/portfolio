@@ -6,9 +6,6 @@ type Props = {}
 
 
 export default function About({}: Props) {
-  console.log(process.env.NEXT_PUBLIC_SDATASET)
-  console.log(process.env.NEXT_PUBLIC_SPROID)
-  console.log(process.env.NEXT_PUBLIC_BASE_URL)
   return (
     <motion.div 
       initial={{

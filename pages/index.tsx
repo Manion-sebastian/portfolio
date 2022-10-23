@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+// import { GetStaticProps } from 'next'
 
 import Header from '../components/header'
 import Hero from '../components/hero'
@@ -26,9 +27,14 @@ type Props = {
     socials: Social[]
 }
 
-const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
-  console.log('socials',socials)
 
+
+// const socials: Social[] = fetchSocials()
+
+
+const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
+  // console.log('socials',socials)
+  // testapi()
   return (
     <div className={'bg-slate-900 text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollColor'}>
       <Head>
@@ -93,7 +99,8 @@ const getStaticProps: GetStaticProps<Props> = async () => {
   const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
   const projects: Project[] = await fetchProjects()
-  const socials: Social[] = await fetchSocials()
+  const socials = await fetchSocials()
+  console.log('working')
 
   return {
     props: {
