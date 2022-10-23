@@ -4,7 +4,11 @@ import Image from 'next/image'
 
 type Props = {}
 
+
 export default function About({}: Props) {
+  console.log(process.env.NEXT_PUBLIC_SANITY_DATASET)
+  console.log(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID)
+  console.log(process.env.NEXT_PUBLIC_BASE_URL)
   return (
     <motion.div 
       initial={{
@@ -17,6 +21,7 @@ export default function About({}: Props) {
         duration: 1.5
       }}
     
+      
     
     className='h-screen relative flex flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
         <h3 className='absolute top-24 uppercase tracking-[20px] text-yellow-400 text-2xl'>About</h3>
