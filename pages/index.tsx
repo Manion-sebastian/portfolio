@@ -17,6 +17,7 @@ import { fetchExperience } from '../utils/fetchExperience'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
+import { urlFor } from '../sanity'
 
 type Props = {
     pageInfo: PageInfo
@@ -83,7 +84,7 @@ const Home = ({pageInfo, experiences,  projects, skills, socials}: Props) => {
         <footer className='sticky bottom-5 flex justify-center w-full'>
               <Link href="#hero">
                 <div className='flex w-fit items-center just ify-center'>
-                  <Image src={'https://i.imgur.com/DkIiGlB.png'} alt='home' height={45} width={45} className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' />
+                  <Image src={'https://i.imgur.com/1BmvvJK.png'} alt='home' height={45} width={45} className='h-10 w-10 rounded-full filter grayscale bg-white hover:grayscale-0 cursor-pointer' />
                 </div>
               </Link>
         </footer>      
