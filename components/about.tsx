@@ -34,7 +34,7 @@ export default function About({ pageInfo }: Props) {
           transition={{ duration:1.3}}
           viewport={{once:true}}
             src={urlFor(pageInfo?.profilePic).url()}
-            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] z-20'
+            className='relative top-16 md:mb-0 flex-shrink-0 w-40 h-40 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] z-20'
         />
         <motion.div
           initial={{ x:200, opacity: 0 }}
