@@ -26,10 +26,10 @@ export default function Hero({ pageInfo }: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         {/* <BackgroundCircles /> */}
         <Image src={urlFor(pageInfo?.heroImage).url()} alt={pageInfo?.name || 'Sebastian Manion'} width={300} height={300} className=' relative mx-auto' />
-        <div className='z-20'>
+        <div className='z-20 pb-20 md:pb-0'>
             <h2 className='text-sm uppercase pb-2 tracking-[14px] text-yellow-400'>{pageInfo?.role || 'Software Engineer'}</h2>
-            <h1 className='text-5xl lg:text-6xl font-bold px-10'>
-                <span className='mr-3'>{text}</span>
+            <h1 className='text-xl md:text-5xl lg:text-6xl font-bold px-10'>
+                <span className='mr-3 '>{text}</span>
                 <Cursor cursorColor='gold' />
             </h1>
 
