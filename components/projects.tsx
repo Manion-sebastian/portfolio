@@ -47,7 +47,7 @@ export default function Projects({projects}: Props) {
 
                 </div>
 
-                <p className='text-lg  text-center w-60 md:w-full md:text-left max-h-80 overflow-y-scroll scrollColor'>{project.summary}</p>
+                <p className='text-lg  text-center w-60 md:w-full md:text-left max-h-32 overflow-y-scroll scrollColor'>{project.summary}</p>
                 <div className=' md:flex-row md:flex-shrink-0 justify-evenly hidden lg:flex'> 
                   {project.technologies?.map((tech) => (
                     <div 
