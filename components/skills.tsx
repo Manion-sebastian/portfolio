@@ -1,14 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './skill'
-// import { Skill } from '../typings'
+import type { Skill as SkillType } from '../typings'
 
 
 type Props = {
-  // skills: Skill[]
+  skills: SkillType[]
 }
 
-export default function Skills({}: Props) {
+export default function Skills({ skills }: Props) {
   return (
     <div
       className='flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center'>
@@ -21,15 +21,13 @@ export default function Skills({}: Props) {
         transition={{delay:0.3, duration:2}}
         viewport={{once: true}}
         >
-      
-     
-          <div className='grid grid-cols-2 gap-5'>
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
+          <div className='grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-10'>
+            {skills.map((skill) => (
+              <Skill 
+                key={skill._id}
+                skill={skill}
+              />
+            ))}
           </div>
       </motion.div>
 

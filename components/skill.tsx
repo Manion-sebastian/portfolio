@@ -1,33 +1,24 @@
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Skill as SkillType } from '../typings'
+import { urlFor } from '../sanity'
 
 type Props = {
-    leftDirection?: boolean
+    skill : SkillType
 }
 
-export default function Skill({leftDirection}: Props) {
+export default function Skill({ skill }: Props) {
   return (
-    <div className='group relative flex cursor-pointer'>
-        <motion.img 
-            // initial={{ x: leftDirection? -200 : 200, opacity:0 }}
-            // whileInView={{ opacity: 1, x:0 }}
-            // transition={{duration: 1}}
-            // viewport={{once:true}}
-            src='https://i.imgur.com/DkIiGlB.png'
-            alt='skill'
-            className='rounded-full border border-yellow-400 object-cover w-24 h-24 md:w-28 md:h-28  xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in'        
+    <div className='flex justify-center flex-col max-h-80 bg-white/90 rounded-lg p-1'>
+        <Image 
+            src={urlFor(skill.image).url()}
+            alt={skill.title}
+            width={96}
+            height={96}    
+            layout='intrinsic'
         />
-
-        {/* <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-yellow-50 h-24 w-24
-        md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0'>
-            <div className='fkex items-center justify-center h-full'>
-                <p className='text-3xl text-yellow-500 font-bold opacity-100'>100%</p>
-            </div>
-        </div> */}
-
-
-        
-
+        <p className='font-semibold flex justify-center text-black'>{skill.title}</p>        
     </div>
   )
 }
