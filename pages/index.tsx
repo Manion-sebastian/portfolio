@@ -13,14 +13,14 @@ import Contact from '../components/contact'
 
 import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { fetchExperiences } from '../utils/fetchExperience'
+import { fetchExperience } from '../utils/fetchExperience'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
 
 type Props = {
     pageInfo: PageInfo
-    // experiences: Experience[]
+    experiences: Experience[]
     projects: Project[]
     skills: Skill[]
     socials: Social[]
@@ -31,7 +31,7 @@ type Props = {
 // const socials: Social[] = fetchSocials()
 // experiences,
 
-const Home = ({pageInfo,  projects, skills, socials}: Props) => {
+const Home = ({pageInfo, experiences,  projects, skills, socials}: Props) => {
   // console.log('socials',socials)
   // testapi()
   return (
@@ -95,7 +95,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo()
-  // const experiences: Experience[] = await fetchExperiences()
+  const experiences: Experience[] = await fetchExperience()
   const skills: Skill[] = await fetchSkills()
   const projects: Project[] = await fetchProjects()
   const socials = await fetchSocials()
@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       pageInfo,
-      // experiences,
+      experiences,
       skills,
       projects,
       socials,
