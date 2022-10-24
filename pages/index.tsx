@@ -77,7 +77,7 @@ const Home = ({pageInfo, experiences,  projects, skills, socials}: Props) => {
       {/* contact me */}
 
       <section id='contact' className='snap-center'>
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
 
         <footer className='sticky bottom-5 flex justify-center w-full'>

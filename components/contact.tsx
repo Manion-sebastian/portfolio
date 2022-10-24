@@ -1,6 +1,7 @@
 import React from 'react'
 import { MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { PageInfo } from '../typings'
 
 type Inputs = {
   name: string,
@@ -9,9 +10,11 @@ type Inputs = {
   message: string
 }
 
-type Props = {}
+type Props = {
+  pageInfo : PageInfo
+}
 
-export default function Contact({}: Props) {
+export default function Contact({ pageInfo }: Props) {
 
   const {
     register,
@@ -30,17 +33,17 @@ export default function Contact({}: Props) {
 
         <div className='flex w-screen p-3 flex-col space-y-10'>
           <h4 className='text-4xl font-semibold text-center'>
-            Always up to chat,{" "}<span className='decoration-yellow-400 underline'>Contact Me</span>
+            <span className='decoration-yellow-400 underline'>Contact Me</span>
           </h4>
 
           <div>
             <div className='flex items-center mb-4 space-x-5 justify-center'>
               <MapPinIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
-              <p className='text-2xl'>Seattle <span className='text-green-400'>Washington</span></p>
+              <p className='text-2xl'>{pageInfo.address}</p>
             </div>
             <div className='flex items-center space-x-5 mb-6 justify-center'>
               <EnvelopeIcon className='text-yellow-400 h-7 w-7 animate-pulse' />
-              <p className='text-2xl'>Sjmanion123@gmail.com</p>
+              <p className='text-2xl'>{pageInfo.email}</p>
             </div>
             
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit md:w-[500px] mx-auto'>
