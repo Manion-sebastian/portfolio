@@ -43,7 +43,7 @@ export default function Contact({}: Props) {
               <p className='text-2xl'>Sjmanion123@gmail.com</p>
             </div>
             
-            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
+            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit md:w-[500px] mx-auto'>
               <input {...register('name')} className='contactInput' placeholder='Name' type="text" />
               <input {...register('email')} className='contactInput' placeholder='Email' type="email" />
               <input {...register('subject')} className='contactInput' placeholder='Subject' type="text" />
