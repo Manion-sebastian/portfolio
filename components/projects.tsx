@@ -1,43 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Project } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  projects: Project[]
+}
 
-export default function Projects({}: Props) {
+export default function Projects({projects}: Props) {
 
-  const projects = [
-    {
-      name: 'p4',
-      snapshot: 'https://i.imgur.com/V5y0uMZ.jpg',
-      desc: 'capstone project',
-      tech: [{name:'lots', logo: 'https://i.imgur.com/V5y0uMZ.jpg'}],
-      live: 'https://github.com/',
-      github: 'https://github.com/'
-    },
-    {
-      name: 'dora',
-      snapshot: 'https://i.imgur.com/xcDFebC.png',
-      desc:
-        'Social media application centered around music, post favorite artists, or songs and and share with others. \n MERN application with the use of the last.fm music discovery api.'
-      ,
-      tech: [{ name: 'JavaScript', logo: 'https://i.imgur.com/VYJRKGo.png'},{ name: 'React', logo: 'https://i.imgur.com/cROMruh.png'},{ name: 'Tailwind', logo: 'https://i.imgur.com/zoaOiRV.png'},{ name: 'MongoDB', logo: 'https://i.imgur.com/EhiLod8.png'}],
-      live: 'https://doramusica.netlify.app/',
-      github: 'https://github.com/Manion-sebastian/dora-client'
-    },
-    {
-      name: 'pLan',
-      snapshot: 'https://i.imgur.com/TLr8EPb.png',
-      desc:
-        'Plan making application where you can create daily notes plans, reminders and more. Allows upload of photos for the plan as well as the user. \n PEN application with the integration of Cloudinary for photo processing and storage.'
-      ,
-      tech: [{ name: 'JavaScript', logo: 'https://i.imgur.com/VYJRKGo.png'},{ name: 'Postgresql', logo: 'https://i.imgur.com/FecTR8V.png'},{ name: 'Sequelize', logo: 'https://i.imgur.com/10AL77i.png'},{ name: 'Tailwind', logo: 'https://i.imgur.com/zoaOiRV.png'}],
-      live: 'https://github.com/Manion-sebastian/pLan-project',
-      github: 'https://p2-debloyment-manion-sebastian.koyeb.app/'
-    },
-
-
-  ]
 
   return (
     <div className='h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-4xl px-10 justify-evenly mx-auto items-center'>
@@ -46,17 +18,21 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className='relative flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-30 scrollColor'>
-        {projects.map((project, i) => (
-          <div className=' flex-shrink-0 w-full snap-center flex flex-col space-y-5 items-center justify-center p-15 md:p-20 h-46' key={`projectkey${i}`}>
-              <motion.div 
+        {projects.map((project) => (
+          <div className=' flex-shrink-0 w-full snap-center flex flex-col space-y-5 items-center justify-center p-15 md:p-20 h-46' 
+          key={project._id}>
+            <motion.div 
                 initial={{y:200, opacity:0}}
                 transition={{duration:1.2}}
                 whileInView={{opacity:1, y:0}}
                 viewport={{once:true}}
-                
-            
             >
-              <Image className='drop-shadow-2xl' src={project.snapshot} width={250} height={125} alt='project' />
+              <Image 
+                className='drop-shadow-2xl' 
+                src={urlFor(project.image).url()} 
+                width={250} 
+                height={125} 
+                alt={project.title} />
             </motion.div>
             <motion.div
               initial={{y:-200, opacity:0}}
@@ -66,24 +42,29 @@ export default function Projects({}: Props) {
 
               <div className='space-y-10 px-0 md:px-10 max-w-full'>
                 <div className='flex justify-center items-baseline'>
-                <h4 className='text-4xl mr-5 font-semibold text-center'><span className='underline decoration-yellow-400'>{project.name}</span></h4>
-                <p><a href={`${project.live}`} rel='noreferrer' target='_blank' >live</a>{ " " }|{ " " }<a href={`${project.github}`} rel='noreferrer' target='_blank'>github</a></p>
+                <h4 className='text-4xl mr-5 font-semibold text-center'><span className='underline decoration-yellow-400'>{project.title}</span></h4>
+                <p className='uppercase text-sm'><a href={project.linkToBuild} rel='noreferrer' target='_blank' >live</a>{"  "}|{"  "}<a href={project.linkToReadMe} rel='noreferrer' target='_blank'>github</a></p>
 
                 </div>
 
-                <p className='text-lg  text-center w-60 md:w-full md:text-left'>{project.desc}</p>
+                <p className='text-lg  text-center w-60 md:w-full md:text-left'>{project.summary}</p>
                 <div className=' md:flex-row md:flex-shrink-0 justify-evenly hidden lg:flex'> 
-                  {project.tech.map((item, i) => (
-                    <div className='flex text-center flex-col flex-shrink-0 bg-white/80 justify-center items-center p-4 w-1/4 m-4 rounded-lg ' key={`${item.name}-${i}`}>
-                      <span className='mb-4 tracking-[2px] drop-shadow-2xl text-black font-bold '>{item.name} </span>
-                      <Image className='drop-shadow-2xl' src={item.logo} alt={item.name} layout='fixed' width={80} height={80} />
+                  {project.technologies?.map((tech) => (
+                    <div 
+                      className='flex text-center flex-col flex-shrink-0 bg-white justify-center items-center p-1 w-1/4 m-4 rounded-lg '
+                      key={tech._id}>
+                      <Image 
+                        src={urlFor(tech.image).url()} 
+                        alt={tech.title} 
+                        layout='fixed' 
+                        width={80} 
+                        height={80} />
+                      <p className='mb-4 tracking-[2px] drop-shadow-2xl text-black font-bold '>{tech.title} </p>
                     </div>
                   ))}
                 </div>
               </div>
             </motion.div>
-
-
             </div>
         ))}
       </div>
