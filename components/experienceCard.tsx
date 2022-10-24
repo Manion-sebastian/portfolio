@@ -24,7 +24,7 @@ export default function ExperienceCard({ experience }: Props) {
 
         <div className='px-0'>
             <h4 className='text-xl md:text-2xl flex justify-center font-light uppercase'>{experience?.jobTitle}</h4>
-            <p className='uppercase md:text-2xl flex justify-center font-bold text-xl mt-1'>{experience?.company}</p>
+            <p className='uppercase md:text-xl flex justify-center font-bold text-xl mt-1'>{experience?.company}</p>
             <div className='flex space-x-2 my-2 justify-evenly bg-slate-700 p-3 rounded-lg'>
               {experience.technologies?.map((tech) => (
                 <Image 
