@@ -35,5 +35,11 @@ export default {
       type: 'url'
 
     },
+    {
+      name: 'linkToReadMe',
+      title: 'LinkToReadMe',
+      type: 'url'
+
+    },
   ],
 }
