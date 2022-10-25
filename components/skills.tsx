@@ -21,12 +21,14 @@ export default function Skills({ skills }: Props) {
         transition={{delay:0.3, duration:2}}
         viewport={{once: true}}
         >
-          <div className='grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-10 max-h-72 md:max-h-screen md:h-[500px] overflow-y-scroll scrollColor'>
+          <div className='grid grid-cols-3 md:grid-cols-4 gap-y-9 gap-x-4 xl:gap-x-16 xl:gap-y-0 md:gap-10 max-h-72 md:max-h-screen md:h-[500px] xl:grid-cols-6 overflow-y-scroll scrollColor'>
             {skills.map((skill) => (
-              <Skill 
-                key={skill._id}
-                skill={skill}
-              />
+              <div key={skill._id} className='w-20 h-20'>
+                <Skill 
+                  skill={skill}
+                />
+
+              </div>
             ))}
           </div>
       </motion.div>
