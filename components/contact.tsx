@@ -31,7 +31,7 @@ export default function Contact({ pageInfo }: Props) {
             Get in touch
         </h3>
 
-        <div className='flex w-screen p-3 flex-col space-y-10'>
+        <div className='flex w-screen p-3 pt-12 flex-col space-y-10'>
           <h4 className='text-4xl font-semibold text-center'>
             <span className='decoration-yellow-400 hidden md:flex md:justify-center underline'>Contact Me</span>
           </h4>
