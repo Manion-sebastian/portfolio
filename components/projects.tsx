@@ -22,6 +22,7 @@ export default function Projects({projects}: Props) {
           <div className=' flex-shrink-0 w-full snap-center flex flex-col space-y-5 items-center justify-center p-15 md:p-20 h-46' 
           key={project._id}>
             <motion.div 
+                className='hidden md:flex'
                 initial={{y:200, opacity:0}}
                 transition={{duration:1.2}}
                 whileInView={{opacity:1, y:0}}
@@ -35,35 +36,37 @@ export default function Projects({projects}: Props) {
                 alt={project.title} />
             </motion.div>
             <motion.div
+            className={'flex flex-row'}
               initial={{y:-200, opacity:0}}
                 transition={{duration:2.2}}
-                whileInView={{opacity:[0, 0,0, 0, 0.8, 0, 1], y:0}}
+                whileInView={{opacity:[0, 0,0, 0, 0.8, 0.9, 1], y:0}}
                 viewport={{once:true}}>
 
-              <div className='space-y-10 px-0 md:px-10 max-w-full'>
+              <div className='space-y-10 p-4 md:px-10 max-w-full bg-slate-500/90 md:rounded-l-xl'>
                 <div className='flex justify-center items-baseline'>
                 <h4 className='text-4xl mr-5 font-semibold text-center'><span className='underline decoration-yellow-400'>{project.title}</span></h4>
                 <p className='uppercase text-sm'><a href={project.linkToBuild} rel='noreferrer' target='_blank' >live</a>{"  "}|{"  "}<a href={project.linkToReadMe} rel='noreferrer' target='_blank'>github</a></p>
 
                 </div>
 
-                <p className='text-lg  text-center w-60 md:w-full md:text-left max-h-32 overflow-y-scroll scrollColor'>{project.summary}</p>
-                <div className=' md:flex-row md:flex-shrink-0 justify-evenly hidden lg:flex'> 
+                <p className='text-lg  text-center w-60 md:w-full md:text-left scrollColor'>{project.summary}</p>
+              </div>
+                <div className=' md:flex-col md:flex-shrink-0 md:justify-center md:align-middle bg-slate-700/90 p-4 rounded-r-xl justify-evenly hidden lg:flex'> 
+                  <h3>Technologies</h3>
                   {project.technologies?.map((tech) => (
                     <div 
-                      className='flex text-center flex-col flex-shrink-0 bg-white justify-center items-center p-1 w-1/4 m-4 rounded-lg '
+                      className='flex text-center flex-col flex-shrink-0 justify-center items-center p-1 w-1/4 m-4 rounded-lg '
                       key={tech._id}>
-                      <Image 
+                      {/* <Image 
                         src={urlFor(tech.image).url()} 
                         alt={tech.title} 
                         layout='fixed' 
-                        width={80} 
-                        height={80} />
-                      <p className='mb-4 tracking-[2px] drop-shadow-2xl text-black font-bold '>{tech.title} </p>
+                        width={40} 
+                        height={40} /> */}
+                      <p className='mb-4 tracking-[2px] drop-shadow-2xl text-white font-bold '>{tech.title} </p>
                     </div>
                   ))}
                 </div>
-              </div>
             </motion.div>
             </div>
         ))}
