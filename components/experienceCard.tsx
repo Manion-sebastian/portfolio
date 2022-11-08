@@ -55,9 +55,9 @@ export default function ExperienceCard({ experience }: Props) {
             </div>
             <div>
               {/* div for points */}
-              <ul className='list-disc flex flex-col justify-center scrollColor space-y-4 py-4 px-10 rounded-r-lg bg-slate-700 text-lg overflow-y-scroll h-[300px] md:h-[300px]'>
+              <ul className='list-disc flex flex-col justify-center scrollColor rounded-r-lg bg-slate-700 text-md overflow-y-scroll h-[300px] md:h-[300px]'>
                   {experience.points?.map((point, i) => (
-                    <li key={`${point}-${i}`}>
+                    <li key={`${point}-${i}`} className='p-3'>
                       {point}
                     </li>
                   ))}
