@@ -16,12 +16,13 @@ export default function Skills({ skills }: Props) {
     <h3 className='absolute top-36 uppercase tracking-[3px] text-yellow-500 text-sm'>My favorite tools</h3>
 
       <motion.div 
+        className='pt-20 md:pt-0'
         initial={{ y:200, opacity: 0 }}
         whileInView={{ y:[200, 0, 10, 0], opacity:[0,0.2,0.8,1]}}
         transition={{delay:0.3, duration:2}}
         viewport={{once: true}}
         >
-          <div className='grid grid-cols-3 md:grid-cols-4 gap-y-9 gap-x-4 xl:gap-x-16 xl:gap-y-0 md:gap-10 max-h-72 md:max-h-screen md:h-[500px] xl:grid-cols-6 overflow-y-scroll scrollColor'>
+          <div className='grid grid-cols-3 md:grid-cols-4 gap-y-9 h-[400px] p-4 gap-x-4 xl:gap-x-16 xl:gap-y-0 md:gap-5 md:w-[500px] md:max-h-screen md:h-[500px] xl:grid-cols-4 overflow-y-scroll scrollColor'>
             {skills.map((skill) => (
               <div key={skill._id} className='w-20 h-20'>
                 <Skill 
