@@ -22,7 +22,7 @@ export default function Projects({projects}: Props) {
           <div className=' flex-shrink-0 w-full snap-center flex flex-col space-y-5 items-center justify-center p-15 md:p-20 h-46' 
           key={project._id}>
             <motion.div 
-                className='hidden md:flex'
+                className='hidden lg:flex'
                 initial={{y:200, opacity:0}}
                 transition={{duration:1.2}}
                 whileInView={{opacity:1, y:0}}
@@ -35,6 +35,8 @@ export default function Projects({projects}: Props) {
                 height={125} 
                 alt={project.title} />
             </motion.div>
+            
+            {/* content div below */}
             <motion.div
             className={'flex flex-row'}
               initial={{y:-200, opacity:0}}
@@ -49,32 +51,37 @@ export default function Projects({projects}: Props) {
 
                 </div>
 
-                <p className='text-lg  text-center w-60 md:w-full md:text-left scrollColor'>{project.summary}</p>
+                <p className='text-lg p-3 text-center w-60 md:w-full md:h-full max-h-[260px] md:text-left md:p-4 scrollColor'>{project.summary}</p>
               </div>
-                <div className=' md:flex-col md:flex-shrink-0 md:justify-center md:align-middle bg-slate-700/90 p-4 rounded-r-xl justify-evenly hidden lg:flex'> 
-                  <h3>Technologies</h3>
+
+              {/* technology div */}
+                <div className=' md:flex-col md:flex-shrink-0 md:justify-center md:align-middle bg-slate-700/90 p-4 rounded-r-xl hidden lg:flex'> 
+                  <h3 className='font-bold uppercase mx-auto py-2'>Technologies</h3>
                   {project.technologies?.map((tech) => (
-                    <div 
-                      className='flex text-center flex-col flex-shrink-0 justify-center items-center p-1 w-1/4 m-4 rounded-lg '
-                      key={tech._id}>
-                      {/* <Image 
-                        src={urlFor(tech.image).url()} 
-                        alt={tech.title} 
-                        layout='fixed' 
-                        width={40} 
-                        height={40} /> */}
-                      <p className='mb-4 tracking-[2px] drop-shadow-2xl text-white font-bold '>{tech.title} </p>
+                    <div
+                    className='flex text-center flex-row flex-shrink-0 justify-baseline p-1 rounded-lg '
+                    key={tech._id}>
+                      <div 
+                  
+                      >
+                        <Image 
+                          src={urlFor(tech.image).url()} 
+                          alt={tech.title} 
+                          layout='fixed' 
+                          width={25} 
+                          height={25} />
+                      </div>
+                      <div>
+                        <p className='mb-4 pl-2 tracking-[2px] drop-shadow-2xl text-white font-bold '>{tech.title} </p>
+                      </div>
                     </div>
+                    
                   ))}
                 </div>
             </motion.div>
             </div>
         ))}
       </div>
-
-      {/* <div className='w-full absolute top-[30%] bg-yellow-500/30 left-0 h-[500px] -skew-y-12 z-0'>
-
-      </div> */}
 
     </div>
   )
