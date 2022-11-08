@@ -10,7 +10,7 @@ type Props = {
 
 export default function Skill({ skill }: Props) {
   return (
-    <div className='flex justify-center flex-col max-h-80 bg-white/90 rounded-lg p-3'>
+    <div className='flex justify-center flex-col max-h-80  rounded-lg'>
         <Image 
             src={urlFor(skill.image).url()}
             alt={skill.title}
@@ -18,7 +18,7 @@ export default function Skill({ skill }: Props) {
             height={96}    
             layout='intrinsic'
         />
-        <p className='font-semibold flex justify-center text-black text-sm'>{skill.title}</p>        
+        <p className='font-semibold flex justify-center py-3 text-white text-sm'>{skill.title}</p>        
     </div>
   )
 }
